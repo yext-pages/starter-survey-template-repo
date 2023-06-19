@@ -27,8 +27,8 @@ export async function main(argumentJson) {
 
     let data = {
         "name": title,
-        "c_surveyCompleted" : [surveyId],
-        "c_promptResponses" : thePromptResponses
+        "survey_surveyCompleted" : [surveyId],
+        "survey_promptResponses" : thePromptResponses
     }
    
     const response = await fetch(postUrl, {
