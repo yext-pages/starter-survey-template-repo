@@ -6,7 +6,7 @@ export async function main(argumentJson) {
    let promptIdsString = responseBody.promptIds
    let promptResponsesString = responseBody.promptResponses
    let submissionTime = responseBody.submissionTime
-   let key = "${{apiKey}}";
+   let key = YEXT_PUBLIC_apiKey;
  
    const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_surveyResponse' + '&v=20230323';
    
