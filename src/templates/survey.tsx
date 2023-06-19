@@ -18,18 +18,18 @@ export const config: TemplateConfig = {
   stream: {
     $id: "survey",
     filter: {
-      entityTypes: ["ce_survey"],
+      entityTypes: ["survey_survey"],
     },
     fields: [
       "id", 
       "name", 
-      "c_surveyTitle",
+      "survey_surveyTitle",
       "description",
       "slug", 
-      "c_surveyCoverImage.url",
-      "c_prompts.promptText",
-      "c_prompts.promptType",
-      "c_prompts.options"
+      "survey_surveyCoverImage.url",
+      "survey_prompts.promptText",
+      "survey_prompts.promptType",
+      "survey_prompts.options"
     ],
     localization: {
       locales: ["en"],
@@ -45,19 +45,19 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }) => {
-  const { id, c_prompts, c_surveyCoverImage, c_surveyTitle, description } = document;
+  const { id, survey_prompts, survey_surveyCoverImage, survey_surveyTitle, description } = document;
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
 
   return (
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
-        <InfoSection titleCssStyles="text-5xl pb-4" title={c_surveyTitle}>
+        <InfoSection titleCssStyles="text-5xl pb-4" title={survey_surveyTitle}>
 
 
           {/* new code starts here... */}
           {description}
-          <img src= {c_surveyCoverImage.url} />
+          <img src= {survey_surveyCoverImage.url} />
           </InfoSection>
 
           
@@ -87,7 +87,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
               }
             >
 
-            {c_prompts.map((o) => (
+            {survey_prompts.map((o) => (
               <Prompt
                 name={o.promptText}
                 label={o.promptText}
